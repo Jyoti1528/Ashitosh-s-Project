@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+.box {
+        width: 350px;
+        height: 30px;
+        border: 1px solid #999;
+        font-size: 18px;
+        color: #1c87c9;
+        background-color: #eee;
+        border-radius: 5px;
+        box-shadow: 4px 4px #ccc;
+      }
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: aliceblue;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.regbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 25px 20px;
+  padding-bottom:30px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  width:100%;
+  font-size:17px;
+  
+}
+
+.regbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+
+.container{
+  background-image: url("data:image/jpeg;base64,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");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+}
+/* Set a grey background color and center the text of the "sign in" section */
+
+</style>
+</head>
+<body>
+
+<form action="payment.html">
+  <div class="container">
+    <h1>Patients Personal Details</h1>
+    <p>Fill the form below and we will get back soon to you for more updates.</p>
+    <hr>
+  
+    <label for="fullname"><b>Fullname</b></label>
+    <input type="text" placeholder="Enter Fullname" name="fullname" id="fullname" required>
+
+    <label for="gender"><b>Gender</b></label>
+    <input type="text" placeholder="Enter Gender" name="gender" id="gender" required>
+
+    <label for="phone number"><b>Phone number</b></label>
+    <input type="text" placeholder="Enter Phone number" name="phone number" id="phone number" required>
+
+    <label><strong>Date of Birth</strong></label>
+    <br><br> <input type="date" name="Date" value=""><br><br>
+    
+    <label for="email"><b>E-mail <Address></Address></b></label>
+    <input type="text" placeholder="ex: myname@example.com" name="email" id="email" required>
+
+    <h3>Doctors</h3>
+    <select class="box">
+      <option>Dr Santosh jain (Rs.1500)</option>
+      <option>Dr Riya singh (Rs.3500)</option>
+      <option>Dr Rohit kumar (Rs.2000)</option>
+      <option>Dr Ananya singh (Rs.2500)</option>
+      <option>Dr Vicky Grovar (Rs.3500)</option>
+      <option>Dr Rajendra Gupta (Rs.1600)</option>
+      <option>Dr khushi Shah (Rs.4500)</option>
+      <option>Dr laxman Tiwari (Rs.3000)</option>
+      <option>Dr Priya hoda (Rs.4500)</option>
+      <option selected>Select a doctor</option>
+    </select><br><br>
+
+    
+   <label for="appointment"><b>Date</b></label>
+   <br><br> <input type="date" name="Date" value=""><br><br>
+
+   <label for="appointment"><b>Time</b></label><br><br>
+   <input type="time"id="time"class="form-control"><hr>
+
+   
+
+   <button type="submit" class="regbtn" >Continue to Payment</button>
+
+  
+ 
+  </div>
+
+</form>
+
+</body>
+</html>
